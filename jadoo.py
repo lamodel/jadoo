@@ -19,18 +19,26 @@ def search():
     else:
         webbrowser.open_new(f'{srch}')
 
+def clear():
+    userInpt.delete(0,END)    
 
 #creating title:
-lblTitle = Label(root, text="JADOO",font=50)
-lblTitle.place(x=150,y=100)
+lblTitle = Label(root, text="JADOO",font=('Arial bold',20))
+lblTitle.place(x=130,y=80)
 #end title
 
 #creating input:
 userInpt = Entry(root, bd=5,width=30)
+userInpt.insert(0,'search...')
 userInpt.place(x=86,y=130)
 
 #creating button:
 clickBtn = Button(root, text="SEARCH",padx=20,pady=5,command=search)
-clickBtn.place(x=130,y=180)
+clickBtn.place(x=80,y=180)
+
+
+#clear button:
+clsBtn = Button(root,text="CLEAR",padx=20,pady=5,command=clear)
+clsBtn.place(x=190,y=180)
 
 root.mainloop()
